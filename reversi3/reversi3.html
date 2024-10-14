@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3色リバーシ</title>
+    <style>
+        .flex-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: salmon;
+        }
+        .flex-container > div {
+            align-content: center;
+            margin: 15px;
+        }
+        #hintButton{
+            align-content: center;
+            text-align: center;
+            max-width: 200px;
+        }
+        #board {
+            display: grid;
+            grid-template-columns: repeat(6, 60px);
+            grid-template-rows: repeat(6, 60px);
+            gap: 5px;
+        }
+        #gameRegister{
+            background-color: white;
+            height:300px;
+            width:200px;
+            border:2px solid darkmagenta;
+            overflow-y: auto;
+        }
+        #header{
+            background-color: salmon;
+            text-align: center;
+        }
+        span.purpleCss{
+            color: purple;
+        }
+        span.whiteCss{
+            color: white;
+        }
+        span.blackCss{
+            color: black;
+        }
+        .cell {
+            width: 50px;
+            height: 50px;
+            background-color: green;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .black {
+            background-color: black;
+            color: white;
+        }
+        .white {
+            background-color: white;
+            color: black;
+        }
+        .purple {
+            background-color: purple;
+            color: black;
+        }
+        .lightgreen {
+            background-color: lightgreen;
+            color: black;
+        }
+        table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        }
+        .list {
+        display: flex;
+        flex-direction: column;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="header">
+    <h2>３色リバーシ</h2>
+    <h1 style="color: rgb(255, 68, 0);"><span class="purpleCss">Purple(人) </span>vs <span class="blackCss">Black(PC)</span>vs <span class="whiteCss">White(PC) </span></h1>
+    </div>
+    <div class="flex-container">
+    <div>
+     <button class="startBtn">スタート</button>   
+    </div>
+    <div>
+        <table style="width:100%">
+            <tr>
+              <th>Turn</th>
+              <td id="turn">-</td>
+            </tr>
+            <tr>
+              <th>Black</th>
+              <td id="BlackNumber">-</td>
+            </tr>
+            <tr>
+              <th>White</th>  
+              <td id="WhiteNumber">-</td>
+            </tr>
+            <tr>
+                <th>Purple</th>  
+                <td id="PurpleNumber">-</td>
+              </tr>
+          </table>
+    </div> 
+    <div id="board"></div>
+    <div id="hintButton">
+        <button class="hint">ヒント</button> 
+        <p>このターンのヒントを見たい場合はボタンを押してください</p>
+    </div>
+    <div>
+        <h3>Moves</h3>
+        <ul class="list" id="gameRegister"> </ul>
+    </div>
+    </div>
+    <script src="reversi.js"></script>
+
+    
+</body>
+</html>
